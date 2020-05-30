@@ -8,6 +8,7 @@ package tarea.vanguardia;
 import Singleton.*;
 import Factory.*;
 import Observer.*;
+import Builder.*;
 
 /**
  *
@@ -82,6 +83,11 @@ public class TareaVanguardia {
     
     public static void BuilderTest(){
         System.out.println("-------------EJECUCIÓN DE BUILDER----------------");
+        
+        MealBuilder mealBuilder = new SandwichMealBuilder();
+        MealDirector director = new MealDirector();
+        director.makeMeal(mealBuilder);
+        System.out.println(mealBuilder.getMeal());
         
         System.out.println("\n---------FIN DE EJECUCIÓN DE OBSERVER---------\n\n");
     }
